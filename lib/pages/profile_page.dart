@@ -29,6 +29,7 @@ class ProfilePage extends StatelessWidget {
                 user.image,
                 width: 94,
                 height: 93,
+                fit: BoxFit.cover,
               ),
             ),
             const SizedBox(
@@ -82,7 +83,7 @@ class ProfilePage extends StatelessWidget {
               crossAxisSpacing: 10,
               crossAxisCount: 2,
               mainAxisSpacing: 20,
-              childAspectRatio: 1 / 1.30,
+              childAspectRatio: 1 / 1.5,
               physics: const BouncingScrollPhysics(),
               padding: const EdgeInsets.symmetric(
                 horizontal: 80,
