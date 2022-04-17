@@ -14,9 +14,10 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget _profileCard(User user) {
       return GestureDetector(
-        onTap: () => Navigator.pushNamed(
+        onTap: () => Navigator.pushNamedAndRemoveUntil(
           context,
           MainPage.routeName,
+          (route) => false,
           arguments: user,
         ),
         child: Column(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_clone_ui/pages/profile_page.dart';
 import 'package:netflix_clone_ui/utilities/colors.dart';
 import 'package:netflix_clone_ui/utilities/constants.dart';
 import 'package:netflix_clone_ui/widgets/movie_list_card.dart';
@@ -58,9 +59,16 @@ class HomePage extends StatelessWidget {
                       ),
                       ClipRRect(
                         borderRadius: BorderRadius.circular(defaultRadius / 2),
-                        child: Image.asset(
-                          user.image,
-                          width: 28,
+                        child: GestureDetector(
+                          onTap: () => Navigator.pushNamedAndRemoveUntil(
+                            context,
+                            ProfilePage.routeName,
+                            (route) => false,
+                          ),
+                          child: Image.asset(
+                            user.image,
+                            width: 28,
+                          ),
                         ),
                       ),
                     ],
@@ -393,6 +401,7 @@ class HomePage extends StatelessWidget {
     }
 
     return SafeArea(
+      top: false,
       child: ListView(
         physics: const BouncingScrollPhysics(),
         children: [
